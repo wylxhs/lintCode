@@ -1,0 +1,2 @@
+# lintCode
+mylintcode
