@@ -1,0 +1,49 @@
+const nthUglyNumber = function (n) {
+
+    var res = [1];
+
+    var i, t, nxt;
+
+    while (res.length < n) {
+
+        t = res[res.length - 1];
+
+        nxt = t * 2;
+
+        for (i = 0; i < res.length; i++) {
+
+            if (res[i] * 2 > t) {
+
+                nxt = Math.min(res[i] * 2, nxt);
+
+            }
+
+        }
+
+        for (i = 0; i < res.length; i++) {
+
+            if (res[i] * 3 > t) {
+
+                nxt = Math.min(res[i] * 3, nxt);
+
+            }
+
+        }
+
+        for (i = 0; i < res.length; i++) {
+
+            if (res[i] * 5 > t) {
+
+                nxt = Math.min(res[i] * 5, nxt);
+
+            }
+
+        }
+
+        res.push(nxt);
+
+    }
+
+    return res[n - 1];
+
+}
