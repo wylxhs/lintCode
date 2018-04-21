@@ -1,0 +1,27 @@
+const digitCounts = function (k, n) {
+
+    var num, t;
+
+    num = 0;
+
+    for (var i = 0; i <= n; i++) {
+
+        t = i;
+
+        do {
+
+            if (t % 10 === k) {
+
+                num++;
+
+            }
+
+            t = Math.floor(t / 10);
+
+        } while (t !== 0);
+
+    }
+
+    return num;
+
+}
